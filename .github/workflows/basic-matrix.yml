@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    
+  pull_request:
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+       include:
+         - node-version: 10.x
+           site: "prod"
+           datacenter: "site-a"
+         - node-version: 12.x
+           site: "dev"
+           datacenter: "site-b"
+    steps:
+      - name: Echo site details for ${{ matrix.site }}
+        env:
+          SITE: ${{ matrix.site }}
+          DATACENTER: ${{ matrix.datacenter }}
+        run:  |
+          echo $SITE $DATACENTER
+  
