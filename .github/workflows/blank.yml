@@ -3,7 +3,7 @@ name : demo-actions
 on:
   issues:
     types: [opened, edited, milestoned]
-
+  push:
 
 jobs:
 
@@ -11,6 +11,7 @@ jobs:
     name: San Luis
     runs-on: ubuntu-latest
     steps:
+      - run: pwd
       - run:  uname -a
       - run: echo " ====== Say Hello from San Luis =========="
       
