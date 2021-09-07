@@ -1,0 +1,24 @@
+name : demo-actions
+on : [push, pull_request]
+
+jobs:
+
+  my_first_job:
+    name: my window
+    runs-on: windows-latest    
+    steps:
+    
+      - run: echo " ====== Say Hello from Windows =========="
+      
+      
+  my_second_job:
+    name: Ubuntu
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "<<<<<< Say Hello from Ubuntu >>>>>>>"
+      
+  my_third_job:
+    name: my mac
+    runs-on: macos-latest
+    steps:
+      - run: echo "~~~~~~~ Say Hello from MacOS ~~~~~~~~~"

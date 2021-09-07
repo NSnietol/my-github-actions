@@ -1,0 +1,23 @@
+name: Health check
+on:
+  push: 
+    branches:
+    - main
+    - feature
+    - '*/release'
+
+jobs:
+
+  prod-check:
+    if: ${{contains(github.head_ref,'main')}}
+    name: 'Checking heart'
+    runs-on: windows-2016
+    steps:
+      - run: echo "Running heart bit check on prod"
+
+  prod-check2:
+    name: 'Checking lungs'
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Running heart bit check on anywhere"
+  
