@@ -20,7 +20,6 @@ To get up to speed about this configurations check out [reference](https://docs.
 
 A job is a set of steps that execute on the `same runner` and if there are more than one job will run in parallel by default . It contains the runner or SO/Environment( `macos-latest,ubuntu-latest,window-latest`) where everything is performed and the necessary. Here we can even set up conditional to decide when a job should be run even after meeting the event-driven condition by using the statement `if` right after clause.
 
-
   
     jobs:
       my-little-job:
@@ -36,6 +35,6 @@ A job is a set of steps that execute on the `same runner` and if there are more 
 
 The public actions can be found on [Marketplace](https://github.com/marketplace?type=actions).
 
-Also one appealing feature is the `strategy.matriz` that enables you to generate multiple jobs but changing some attributes on runtime.
+Also one appealing feature is the `strategy.matrix` that enables you to generate multiple jobs but changing some attributes on runtime.
 
 
